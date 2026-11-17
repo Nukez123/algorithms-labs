@@ -1,0 +1,252 @@
+:root {
+  --ink: #1e2440;
+  --muted: #68718b;
+  --violet: #6158ed;
+  --line: #e5e8f3;
+  --paper: #fff;
+  --bg: #f5f7fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.shell {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.topbar {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar__inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: #9a9eb5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand span {
+  color: var(--violet);
+  padding: 0 4px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 57px 56px 50px;
+  margin-top: 28px;
+  background: linear-gradient(120deg, #29234e 0%, #4b3c92 58%, #6553c5 100%);
+  color: #fff;
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(57, 45, 127, .15);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__eyebrow {
+  font-size: 12px;
+  letter-spacing: 2.1px;
+  font-weight: 750;
+  color: #d8cffc;
+}
+
+.hero h1 {
+  margin: 16px 0 12px;
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+}
+
+.accent {
+  color: #d6c6ff;
+}
+
+.hero__group {
+  margin: 0 0 14px;
+  font-size: 18px;
+  color: #f0ebff;
+}
+
+.hero__group strong {
+  color: #fff;
+}
+
+.hero__text {
+  max-width: 640px;
+  margin: 0;
+  font-size: 15px;
+  color: #e4defc;
+}
+
+.hero__decor {
+  position: absolute;
+  right: 10px;
+  bottom: -105px;
+  font-size: 260px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, .06);
+  line-height: 1;
+  letter-spacing: -18px;
+  pointer-events: none;
+}
+
+.labs-section {
+  margin-top: 44px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 0 2px 19px;
+}
+
+.section-heading__caption {
+  color: #8178b7;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  font-size: 27px;
+  letter-spacing: -.7px;
+  margin: 4px 0 0;
+}
+
+.section-heading__count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.lab-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 22px 24px;
+  text-decoration: none;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(29, 36, 66, .035);
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.lab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(29, 36, 66, .07);
+  border-color: #d7d0ff;
+}
+
+.lab-button__number {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f0ff;
+  color: var(--violet);
+  font-size: 18px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.lab-button__title {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.footer {
+  text-align: center;
+  margin: 42px 0 30px;
+  font-size: 12px;
+  color: #969cb0;
+}
+
+@media (max-width: 750px) {
+  .labs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 42px 28px;
+  }
+
+  .hero__decor {
+    font-size: 170px;
+    bottom: -45px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .shell {
+    padding: 0 15px;
+  }
+
+  .brand {
+    letter-spacing: 1px;
+    font-size: 9px;
+  }
+
+  .hero {
+    border-radius: 18px;
+    margin-top: 17px;
+  }
+
+  .lab-button {
+    padding: 18px;
+    min-height: 84px;
+  }
+
+  .lab-button__number {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .lab-button__title {
+    font-size: 15px;
+  }
+}
