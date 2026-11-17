@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №4 — Рекурсия</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    
+
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 4</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+
+      <article class="task-card" id="task-1">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 01</span>
+        </div>
+        <p class="condition">
+          Факториал числа: Напишите функцию, которая рекурсивно
+          вычисляет факториал заданного числа n.
+        </p>
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field" for="t1-n">
+              <span>Число n</span>
+              <input id="t1-n" type="number" step="1" min="0" max="500" placeholder="Например, 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result1">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-2">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 02</span>
+        </div>
+        <p class="condition">
+          Числа Фибоначчи: Напишите функцию, которая рекурсивно
+          вычисляет n-ое число Фибоначчи.
+        </p>
+        <form onsubmit="task2(event)">
+          <div class="fields">
+            <label class="field" for="t2-n">
+              <span>Номер n</span>
+              <input id="t2-n" type="number" step="1" min="0" max="35" placeholder="Например, 7" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result2">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-3">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 03</span>
+        </div>
+        <p class="condition">
+          Возведение в степень: Напишите функцию, которая рекурсивно
+          возводит число x в степень n.
+        </p>
+        <form onsubmit="task3(event)">
+          <div class="fields">
+            <label class="field" for="t3-x">
+              <span>Число x</span>
+              <input id="t3-x" type="number" step="any" placeholder="Например, 2" required>
+            </label>
+            <label class="field" for="t3-n">
+              <span>Степень n</span>
+              <input id="t3-n" type="number" step="1" min="-1000" max="1000" placeholder="Например, 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result3">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-4">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 04</span>
+        </div>
+        <p class="condition">
+          Палиндром: Напишите функцию, которая рекурсивно проверяет,
+          является ли заданная строка палиндромом.
+        </p>
+        <form onsubmit="task4(event)">
+          <div class="fields">
+            <label class="field field--full" for="t4-text">
+              <span>Строка</span>
+              <input id="t4-text" type="text" placeholder="А роза упала на лапу Азора" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result4">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-5">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 05</span>
+        </div>
+        <p class="condition">
+          Бинарный поиск: Напишите функцию, которая рекурсивно
+          выполняет бинарный поиск заданного элемента
+          в отсортированном массиве.
+        </p>
+        <form onsubmit="task5(event)">
+          <div class="fields">
+            <label class="field field--full" for="t5-array">
+              <span>Отсортированный массив через пробел</span>
+              <input id="t5-array" type="text" placeholder="1 3 5 7 9" required>
+            </label>
+            <label class="field" for="t5-target">
+              <span>Искомое число</span>
+              <input id="t5-target" type="number" step="any" placeholder="Например, 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result5">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-6">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 06</span>
+        </div>
+        <p class="condition">
+          Обратный порядок слов: Напишите функцию, которая рекурсивно
+          меняет порядок слов в заданной строке на обратный.
+        </p>
+        <form onsubmit="task6(event)">
+          <div class="fields">
+            <label class="field field--full" for="t6-text">
+              <span>Текст</span>
+              <input id="t6-text" type="text" placeholder="Раз два три" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result6">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-7">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 07</span>
+        </div>
+        <p class="condition">
+          Разложение числа на сумму простых чисел:
+          Напишите функцию, которая рекурсивно разлагает
+          заданное число на сумму простых чисел.
+        </p>
+        <form onsubmit="task7(event)">
+          <div class="fields">
+            <label class="field" for="t7-n">
+              <span>Целое число n</span>
+              <input id="t7-n" type="number" step="1" min="2" max="1000" placeholder="Например, 11" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result7">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-8">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 08</span>
+        </div>
+        <p class="condition">
+          Подсчет количества цифр в числе: Напишите функцию,
+          которая рекурсивно подсчитывает количество цифр
+          в заданном числе.
+        </p>
+        <form onsubmit="task8(event)">
+          <div class="fields">
+            <label class="field" for="t8-n">
+              <span>Целое число</span>
+              <input id="t8-n" type="number" step="1" placeholder="Например, -12345" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result" id="result8">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-9">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 09</span>
+        </div>
+        <p class="condition">
+          Напишите рекурсивное решение головоломки
+          «Ханойская башня».
+        </p>
+        <form onsubmit="task9(event)">
+          <div class="fields">
+            <label class="field" for="t9-n">
+              <span>Количество дисков</span>
+              <input id="t9-n" type="number" step="1" min="1" max="8" placeholder="Например, 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить</button>
+          <output class="result result--long" id="result9">Результат появится здесь</output>
+        </form>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

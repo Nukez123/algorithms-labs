@@ -58,7 +58,7 @@ body {
   overflow: hidden;
   padding: 57px 56px 50px;
   margin-top: 28px;
-  background: linear-gradient(120deg, #29234e 0%, #4b3c92 58%, #6553c5 100%);
+  background: var(--violet);
   color: #fff;
   border-radius: 24px;
   box-shadow: 0 18px 42px rgba(57, 45, 127, .15);
