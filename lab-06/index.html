@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №6 — Матрицы</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    
+
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 6</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+
+      <article class="task-card" id="task-1">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 01</span>
+        </div>
+        <p class="condition">Дана квадратная матрица A порядка M (M — нечетное число). Начиная с элемента A1,1 и перемещаясь против часовой стрелки, вывести все ее элементы по спирали: первый столбец, последняя строка, последний столбец в обратном порядке, первая строка в обратном порядке, оставшиеся элементы второго столбца и т. д.; последним выводится центральный элемент матрицы.</p>
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field field--full" for="t1-matrix">
+              <span>Матрица (строки с новой строки)</span>
+              <textarea id="t1-matrix" rows="3" placeholder="1 2 3&#10;4 5 6&#10;7 8 9" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result1">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-2">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 02</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N и целое число K (1 ≤ K ≤ M). Найти сумму и произведение элементов K-й строки данной матрицы.</p>
+        <form onsubmit="task2(event)">
+          <div class="fields">
+            <label class="field field--full" for="t2-matrix">
+              <span>Матрица</span>
+              <textarea id="t2-matrix" rows="3" placeholder="1 2 3&#10;4 5 6" required></textarea>
+            </label>
+            <label class="field" for="t2-k">
+              <span>Номер строки K</span>
+              <input id="t2-k" type="number" step="1" min="1" placeholder="Например, 2" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result2">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-3">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 03</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N. Найти номер ее столбца с наименьшим произведением элементов и вывести данный номер, а также значение наименьшего произведения.</p>
+        <form onsubmit="task3(event)">
+          <div class="fields">
+            <label class="field field--full" for="t3-matrix">
+              <span>Матрица</span>
+              <textarea id="t3-matrix" rows="3" placeholder="1 2 3&#10;4 5 6&#10;7 8 9" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result3">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-4">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 04</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N. В каждом ее столбце найти количество элементов, больших среднего арифметического всех элементов этого столбца.</p>
+        <form onsubmit="task4(event)">
+          <div class="fields">
+            <label class="field field--full" for="t4-matrix">
+              <span>Матрица</span>
+              <textarea id="t4-matrix" rows="3" placeholder="1 2 3&#10;4 5 6&#10;7 8 9" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result4">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-5">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 05</span>
+        </div>
+        <p class="condition">Дана целочисленная матрица размера M × N. Найти номер первого из ее столбцов, содержащих только нечетные числа. Если таких столбцов нет, то вывести 0.</p>
+        <form onsubmit="task5(event)">
+          <div class="fields">
+            <label class="field field--full" for="t5-matrix">
+              <span>Матрица</span>
+              <textarea id="t5-matrix" rows="3" placeholder="1 2 3&#10;5 4 7&#10;9 6 11" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result5">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-6">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 06</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N. Преобразовать матрицу, поменяв местами минимальный и максимальный элемент в каждой строке.</p>
+        <form onsubmit="task6(event)">
+          <div class="fields">
+            <label class="field field--full" for="t6-matrix">
+              <span>Матрица</span>
+              <textarea id="t6-matrix" rows="3" placeholder="4 1 9&#10;7 3 2" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result6">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-7">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 07</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N. Поменять местами столбцы, содержащие минимальный и максимальный элементы матрицы.</p>
+        <form onsubmit="task7(event)">
+          <div class="fields">
+            <label class="field field--full" for="t7-matrix">
+              <span>Матрица</span>
+              <textarea id="t7-matrix" rows="3" placeholder="1 9 3&#10;4 5 6" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result7">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-8">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 08</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N (M и N — четные числа). Поменять местами левую верхнюю и правую нижнюю четверти матрицы.</p>
+        <form onsubmit="task8(event)">
+          <div class="fields">
+            <label class="field field--full" for="t8-matrix">
+              <span>Матрица</span>
+              <textarea id="t8-matrix" rows="4" placeholder="1 2 3 4&#10;5 6 7 8&#10;9 10 11 12&#10;13 14 15 16" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result8">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-9">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 09</span>
+        </div>
+        <p class="condition">Дана матрица размера M × N. Упорядочить ее строки так, чтобы их первые элементы образовывали возрастающую последовательность.</p>
+        <form onsubmit="task9(event)">
+          <div class="fields">
+            <label class="field field--full" for="t9-matrix">
+              <span>Матрица</span>
+              <textarea id="t9-matrix" rows="3" placeholder="5 4 3&#10;1 2 3&#10;3 6 7" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result9">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-10">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 10</span>
+        </div>
+        <p class="condition">Дана квадратная матрица A порядка M. Найти сумму элементов каждой ее диагонали, параллельной главной (начиная с одноэлементной диагонали).</p>
+        <form onsubmit="task10(event)">
+          <div class="fields">
+            <label class="field field--full" for="t10-matrix">
+              <span>Матрица</span>
+              <textarea id="t10-matrix" rows="3" placeholder="1 2 3&#10;4 5 6&#10;7 8 9" required></textarea>
+            </label>
+          </div>
+          <button type="submit">Вычислить  </button>
+          <output class="result" id="result10">Результат появится здесь</output>
+        </form>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
