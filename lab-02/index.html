@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №2 — Ветвления и условия</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html"><span aria-hidden="true">←</span> На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    
+
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 2</h2>
+      </div>
+    </div>
+
+    <section class="task-grid" aria-label="Задачи лабораторной работы">
+
+      <article class="task-card" id="task-1">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 01</span>
+        </div>
+        <p class="condition">Даны две переменные целого типа: A и B. Если их значения не равны, то присвоить каждой переменной большее из этих значений, а если равны, то присвоить переменным нулевые значения. Вывести новые значения переменных A и B.</p>
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field" for="t1-A">
+              <span>A</span>
+              <input id="t1-A" type="number" step="1" placeholder="Например, 2" required>
+            </label>
+            <label class="field" for="t1-B">
+              <span>B</span>
+              <input id="t1-B" type="number" step="1" placeholder="Например, 7" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result1" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-2">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 02</span>
+        </div>
+        <p class="condition">Даны три числа. Найти сумму двух наибольших из них</p>
+        <form onsubmit="task2(event)">
+          <div class="fields">
+            <label class="field" for="t2-a">
+              <span>Число a</span>
+              <input id="t2-a" type="number" step="any" placeholder="Например, 8" required>
+            </label>
+            <label class="field" for="t2-b">
+              <span>Число b</span>
+              <input id="t2-b" type="number" step="any" placeholder="Например, 3" required>
+            </label>
+            <label class="field" for="t2-c">
+              <span>Число c</span>
+              <input id="t2-c" type="number" step="any" placeholder="Например, 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result2" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-3">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 03</span>
+        </div>
+        <p class="condition">На плоскости расположены три точки: A, B, C. Определить, какая из двух последних точек (B или C) расположена ближе к A, и вывести эту точку и ее расстояние от точки A.</p>
+        <form onsubmit="task3(event)">
+          <div class="fields">
+            <label class="field" for="t3-ax">
+              <span>A: x</span>
+              <input id="t3-ax" type="number" step="any" placeholder="Например, 0" required>
+            </label>
+            <label class="field" for="t3-ay">
+              <span>A: y</span>
+              <input id="t3-ay" type="number" step="any" placeholder="Например, 0" required>
+            </label>
+            <label class="field" for="t3-bx">
+              <span>B: x</span>
+              <input id="t3-bx" type="number" step="any" placeholder="Например, 3" required>
+            </label>
+            <label class="field" for="t3-by">
+              <span>B: y</span>
+              <input id="t3-by" type="number" step="any" placeholder="Например, 4" required>
+            </label>
+            <label class="field" for="t3-cx">
+              <span>C: x</span>
+              <input id="t3-cx" type="number" step="any" placeholder="Например, 6" required>
+            </label>
+            <label class="field" for="t3-cy">
+              <span>C: y</span>
+              <input id="t3-cy" type="number" step="any" placeholder="Например, 8" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result3" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-4">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 04</span>
+        </div>
+        <p class="condition">Даны координаты точки, не лежащей на координатных осях OX и OY. Определить номер координатной четверти, в которой находится данная точка</p>
+        <form onsubmit="task4(event)">
+          <div class="fields">
+            <label class="field" for="t4-x">
+              <span>Координата x</span>
+              <input id="t4-x" type="number" step="any" placeholder="Например, -2" required>
+            </label>
+            <label class="field" for="t4-y">
+              <span>Координата y</span>
+              <input id="t4-y" type="number" step="any" placeholder="Например, 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result4" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-5">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 05</span>
+        </div>
+        <p class="condition">Дано целое число. Вывести его строку-описание вида «отрицательное четное число», «нулевое число», «положительное нечетное число» и т. д.</p>
+        <form onsubmit="task5(event)">
+          <div class="fields">
+            <label class="field" for="t5-n">
+              <span>Целое число</span>
+              <input id="t5-n" type="number" step="1" placeholder="Например, -8" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result5" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-6">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 06</span>
+        </div>
+        <p class="condition">Дано целое число, лежащее в диапазоне 1–999. Вывести его строку описание вида «четное двузначное число», «нечетное трехзначное число» и т. д.</p>
+        <form onsubmit="task6(event)">
+          <div class="fields">
+            <label class="field" for="t6-n">
+              <span>Число от 1 до 999</span>
+              <input id="t6-n" type="number" step="1" min="1" max="999" placeholder="Например, 248" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result6" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-7">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 07</span>
+        </div>
+        <p class="condition">Дан номер дня – целое число от 1 до 31 и месяца — целое число в диапазоне 1–12 (1 — январь, 2 — февраль и т. д.). Вывести дату в виде текста (например, «пятое января»).</p>
+        <form onsubmit="task7(event)">
+          <div class="fields">
+            <label class="field" for="t7-day">
+              <span>День (1–31)</span>
+              <input id="t7-day" type="number" step="1" min="1" max="31" placeholder="Например, 5" required>
+            </label>
+            <label class="field" for="t7-month">
+              <span>Месяц (1–12)</span>
+              <input id="t7-month" type="number" step="1" min="1" max="12" placeholder="Например, 1" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result7" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-8">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 08</span>
+        </div>
+        <p class="condition">Дано целое число в диапазоне 10–40, определяющее количество учебных заданий по некоторой теме. Вывести строку-описание указанного количества заданий, обеспечив правильное согласование числа со словами «учебное задание», например: 18 — «восемнадцать учебных заданий».</p>
+        <form onsubmit="task8(event)">
+          <div class="fields">
+            <label class="field" for="t8-n">
+              <span>Количество заданий</span>
+              <input id="t8-n" type="number" step="1" min="10" max="40" placeholder="Например, 21" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result8" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-9">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 09</span>
+        </div>
+        <p class="condition">Дано целое число в диапазоне 100–999. Вывести строку-описание данного числа, например: 256 — «двести пятьдесят шесть», 814 — «восемьсот четырнадцать».</p>
+        <form onsubmit="task9(event)">
+          <div class="fields">
+            <label class="field" for="t9-n">
+              <span>Число от 100 до 999</span>
+              <input id="t9-n" type="number" step="1" min="100" max="999" placeholder="Например, 256" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result9" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-10">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 10</span>
+        </div>
+        <p class="condition">В восточном календаре принят 60-летний цикл, состоящий из 12- летних подциклов, обозначаемых названиями цвета: зеленый, красный, желтый, белый и черный. В каждом подцикле годы носят названия животных: крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы, обезьяны, курицы, собаки и свиньи. По номеру года определить его название, если 1984 год — начало цикла: «год зеленой крысы».</p>
+        <form onsubmit="task10(event)">
+          <div class="fields">
+            <label class="field" for="t10-year">
+              <span>Номер года</span>
+              <input id="t10-year" type="number" step="1" min="1" placeholder="Например, 1984" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true">→</span></button>
+          <output class="result" id="result10" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+    </section>
+
+  </main>
+</body>
+</html>

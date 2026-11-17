@@ -1,21 +1,21 @@
 
-// Читаем число из поля ввода.
+// Читаем число из поля ввода
 function num(id) {
     return Number(document.getElementById(id).value);
 }
 
-// Показываем ответ прямо под кнопкой.
+// Показываем ответ прямо под кнопкой
 function show(n, text) {
     let output = document.getElementById("result" + n);
     output.textContent = text;
     output.classList.add("is-ready");
 }
 
-// Убираем длинные дробные части из результатов.
+// Убираем длинные дробные части из результатов
 function fmt(value) {
     return Number(value.toFixed(6));
 }
-
+// Задача 1
 function task1(event) {
     event.preventDefault();
     let a = num("t1-a");
@@ -26,7 +26,7 @@ function task1(event) {
     let P = 2 * (a + b);
     show(1, `Площадь S = ${fmt(S)}\nПериметр P = ${fmt(P)}`);
 }
-
+// Задача 2
 function task2(event) {
     event.preventDefault();
     let d = num("t2-d");
@@ -35,7 +35,7 @@ function task2(event) {
     let L = 3.14 * d;
     show(2, `Длина окружности L = ${fmt(L)}`);
 }
-
+// Задача 3
 function task3(event) {
     event.preventDefault();
     let a = num("t3-a");
@@ -43,7 +43,7 @@ function task3(event) {
     let result = (a + b) / 2;
     show(3, `Среднее арифметическое = ${fmt(result)}`);
 }
-
+// Задача 4
 function task4(event) {
     event.preventDefault();
     let a = num("t4-a");
@@ -54,7 +54,7 @@ function task4(event) {
     let b2 = b ** 2;
     show(4, `Сумма = ${fmt(a2 + b2)}\nРазность = ${fmt(a2 - b2)}\nПроизведение = ${fmt(a2 * b2)}\nЧастное = ${fmt(a2 / b2)}`);
 }
-
+// Задача 5
 function task5(event) {
     event.preventDefault();
     let a = Math.abs(num("t5-a"));
@@ -63,7 +63,7 @@ function task5(event) {
 
     show(5, `Сумма = ${fmt(a + b)}\nРазность = ${fmt(a - b)}\nПроизведение = ${fmt(a * b)}\nЧастное = ${fmt(a / b)}`);
 }
-
+// Задача 6
 function task6(event) {
     event.preventDefault();
     let x1 = num("t6-x1");
@@ -73,7 +73,7 @@ function task6(event) {
     let d = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
     show(6, `Расстояние = ${fmt(d)}`);
 }
-
+// Задача 7
 function task7(event) {
     event.preventDefault();
     let A = num("t7-a");
@@ -83,7 +83,7 @@ function task7(event) {
     let BC = Math.abs(C - B);
     show(7, `AC = ${fmt(AC)}\nBC = ${fmt(BC)}\nСумма = ${fmt(AC + BC)}`);
 }
-
+// Задача 8
 function task8(event) {
     event.preventDefault();
     let A = num("t8-a");
@@ -96,7 +96,7 @@ function task8(event) {
     let BC = Math.abs(C - B);
     show(8, `AC · BC = ${fmt(AC * BC)}`);
 }
-
+// Задача 9
 function task9(event) {
     event.preventDefault();
     let x1 = num("t9-x1");
@@ -109,7 +109,7 @@ function task9(event) {
     let S = a * b;
     show(9, `Периметр P = ${fmt(P)}\nПлощадь S = ${fmt(S)}`);
 }
-
+// Задача 10
 function task10(event) {
     event.preventDefault();
     let x1 = num("t10-x1");
@@ -125,14 +125,14 @@ function task10(event) {
     let S = Math.abs((x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)) / 2;
     show(10, `Периметр P = ${fmt(P)}\nПлощадь S = ${fmt(S)}`);
 }
-
+// Задача 11
 function task11(event) {
     event.preventDefault();
     let x = num("t11-x");
     let y = 3 * x ** 6 - 6 * x ** 2 - 7;
     show(11, `y = ${fmt(y)}`);
 }
-
+// Задача 12
 function task12(event) {
     event.preventDefault();
     let x = num("t12-x");
