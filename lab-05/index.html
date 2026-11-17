@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №5 — Массивы</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 5</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+
+      <article class="task-card" id="task-1">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 01</span>
+        </div>
+        <p class="condition">Дано целое число N (&gt; 0). Сформировать и вывести целочисленный массив размера N, содержащий N первых положительных нечётных чисел: 1, 3, 5, ... .</p>
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field" for="t1-n">
+              <span>Число N</span>
+              <input id="t1-n" type="number" step="1" min="1" max="100" placeholder="Например, 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result1" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-2">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 02</span>
+        </div>
+        <p class="condition">Дано целое число N (&gt; 1), а также первый член A и знаменатель D геометрической прогрессии. Сформировать и вывести массив размера N, содержащий N первых членов данной прогрессии: A, A·D, A·D², A·D³, ... .</p>
+        <form onsubmit="task2(event)">
+          <div class="fields">
+            <label class="field" for="t2-n">
+              <span>Число N</span>
+              <input id="t2-n" type="number" step="1" min="2" max="50" placeholder="Например, 5" required>
+            </label>
+            <label class="field" for="t2-a">
+              <span>Первый член A</span>
+              <input id="t2-a" type="number" step="any" placeholder="Например, 2" required>
+            </label>
+            <label class="field" for="t2-d">
+              <span>Знаменатель D</span>
+              <input id="t2-d" type="number" step="any" placeholder="Например, 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result2" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-3">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 03</span>
+        </div>
+        <p class="condition">Даны целые числа N (&gt; 2), A и B. Сформировать и вывести целочисленный массив размера N, первый элемент которого равен A, второй равен B, а каждый последующий элемент равен сумме всех предыдущих.</p>
+        <form onsubmit="task3(event)">
+          <div class="fields">
+            <label class="field" for="t3-n">
+              <span>Число N</span>
+              <input id="t3-n" type="number" step="1" min="3" max="50" placeholder="Например, 5" required>
+            </label>
+            <label class="field" for="t3-a">
+              <span>Число A</span>
+              <input id="t3-a" type="number" step="1" placeholder="Например, 1" required>
+            </label>
+            <label class="field" for="t3-b">
+              <span>Число B</span>
+              <input id="t3-b" type="number" step="1" placeholder="Например, 2" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result3" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-4">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 04</span>
+        </div>
+        <p class="condition">Дан массив A размера N. Вывести его элементы в следующем порядке: A₁, Aₙ, A₂, Aₙ₋₁, A₃, Aₙ₋₂, ... .</p>
+        <form onsubmit="task4(event)">
+          <div class="fields">
+            <label class="field field--full" for="t4-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t4-arr" type="text" placeholder="Например, 1 2 3 4 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result4" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-5">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 05</span>
+        </div>
+        <p class="condition">Дан массив A размера N. Вывести вначале его элементы с нечётными номерами в порядке возрастания номеров, а затем — элементы с чётными номерами в порядке убывания номеров.</p>
+        <form onsubmit="task5(event)">
+          <div class="fields">
+            <label class="field field--full" for="t5-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t5-arr" type="text" placeholder="Например, 1 2 3 4 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result5" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-6">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 06</span>
+        </div>
+        <p class="condition">Дан массив размера N и целые числа K и L (1 ≤ K ≤ L ≤ N). Найти среднее арифметическое элементов массива с номерами от K до L включительно.</p>
+        <form onsubmit="task6(event)">
+          <div class="fields">
+            <label class="field field--full" for="t6-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t6-arr" type="text" placeholder="Например, 10 20 30 40" required>
+            </label>
+            <label class="field" for="t6-k">
+              <span>Номер K</span>
+              <input id="t6-k" type="number" step="1" min="1" placeholder="Например, 2" required>
+            </label>
+            <label class="field" for="t6-l">
+              <span>Номер L</span>
+              <input id="t6-l" type="number" step="1" min="1" placeholder="Например, 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result6" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-7">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 07</span>
+        </div>
+        <p class="condition">Дан целочисленный массив размера N, не содержащий одинаковых чисел. Проверить, образуют ли его элементы арифметическую прогрессию. Если образуют, то вывести разность прогрессии, если нет — вывести 0.</p>
+        <form onsubmit="task7(event)">
+          <div class="fields">
+            <label class="field field--full" for="t7-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t7-arr" type="text" placeholder="Например, 9 6 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result7" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-8">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 08</span>
+        </div>
+        <p class="condition">Дан массив A размера N. Найти минимальный элемент из его элементов с чётными номерами: A₂, A₄, A₆, ... .</p>
+        <form onsubmit="task8(event)">
+          <div class="fields">
+            <label class="field field--full" for="t8-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t8-arr" type="text" placeholder="Например, 8 3 7 2 5" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result8" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-9">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 09</span>
+        </div>
+        <p class="condition">Дан массив размера N. Найти номер его последнего локального максимума (локальный максимум — это элемент, который больше любого из своих соседей).</p>
+        <form onsubmit="task9(event)">
+          <div class="fields">
+            <label class="field field--full" for="t9-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t9-arr" type="text" placeholder="Например, 1 4 2 5 3" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result9" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+      <article class="task-card" id="task-10">
+        <div class="task-card__meta">
+          <span class="task-number">Задача 10</span>
+        </div>
+        <p class="condition">Дан целочисленный массив размера N, содержащий ровно два одинаковых элемента. Найти номера одинаковых элементов и вывести эти номера в порядке возрастания.</p>
+        <form onsubmit="task10(event)">
+          <div class="fields">
+            <label class="field field--full" for="t10-arr">
+              <span>Элементы массива через пробел</span>
+              <input id="t10-arr" type="text" placeholder="Например, 2 7 5 7 9" required>
+            </label>
+          </div>
+          <button type="submit">Вычислить <span aria-hidden="true"> </button>
+          <output class="result" id="result10" aria-live="polite">Результат появится здесь</output>
+        </form>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
