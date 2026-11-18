@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №11 — Обход дерева</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 11</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+      <article class="task-card task-card--wide" id="task-1">
+        
+
+        <p class="condition">
+          Используя словесное описание реализовать обход дерева.
+        </p>
+
+        <h3>Словесное описание</h3>
+        <ol class="description-list">
+          <li>Первое число становится корнем дерева. Меньшие числа добавляем слева, остальные — справа</li>
+          <li><strong>Симметричный обход:</strong> левое поддерево → корень → правое</li>
+          <li><strong>Прямой обход:</strong> корень → левое поддерево → правое</li>
+          <li><strong>Обратный обход:</strong> левое поддерево → правое → корень</li>
+          <li><strong>Поуровневый обход:</strong> просматриваем узлы по уровням слева направо</li>
+        </ol>
+
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field field--full" for="t1-array">
+              <span>Числа для построения дерева через пробел</span>
+              <input
+                id="t1-array"
+                type="text"
+                placeholder="Например, 8 3 10 1 6 14 4 7 13"
+                required
+              >
+            </label>
+          </div>
+
+          <button type="submit">
+            Выполнить обход 
+          </button>
+
+          <output class="result" id="result1" aria-live="polite">
+            Результаты появятся здесь
+          </output>
+        </form>
+
+        <div class="visualization">
+          <h3>Поуровневый обход</h3>
+          <p class="visualization__hint">
+            Узлы каждого уровня выводятся слева направо, начиная с корня
+          </p>
+
+          <output class="result result--long" id="levels" aria-live="polite">
+            Здесь появится список уровней дерева
+          </output>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

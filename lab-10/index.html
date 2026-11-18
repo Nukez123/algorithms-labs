@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №10 — Бинарный поиск</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 10</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+      <article class="task-card task-card--wide" id="task-1">
+        <div class="task-card__meta">
+        </div>
+
+        <p class="condition">
+          Используя словесное описание реализовать бинарный поиск
+        </p>
+
+        <h3>Словесное описание</h3>
+        <ol class="description-list">
+          <li>Берём массив, отсортированный по возрастанию</li>
+          <li>Сравниваем искомое число с элементом в середине массива</li>
+          <li>Если числа равны - элемент найден. Если искомое больше - ищем справа, иначе - слева</li>
+          <li>Повторяем поиск в оставшейся половине, пока не найдём число или диапазон не станет пустым</li>
+        </ol>
+
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field field--full" for="t1-array">
+              <span>Отсортированный массив через пробел</span>
+              <input id="t1-array" type="text"
+                     placeholder="Например, 1 3 5 7 9" required>
+            </label>
+
+            <label class="field" for="t1-target">
+              <span>Искомое число</span>
+              <input id="t1-target" type="number" step="any"
+                     placeholder="Например, 7" required>
+            </label>
+          </div>
+
+          <button type="submit">
+            Найти
+          </button>
+
+          <output class="result" id="result1" aria-live="polite">
+            Результат появится здесь
+          </output>
+        </form>
+
+        <div class="visualization">
+          <h3>Ход поиска</h3>
+          <p class="visualization__hint">
+            На каждом шаге показываем проверяемое число
+            и направление дальнейшего поиска
+          </p>
+
+          <output class="result result--long" id="steps" aria-live="polite">
+            Нажми «Найти», чтобы увидеть шаги поиска
+          </output>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

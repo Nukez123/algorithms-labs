@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №9 — Сортировка выбором</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 9</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+      <article class="task-card task-card--wide" id="task-1">
+        <div class="task-card__meta">
+        </div>
+
+        <p class="condition">
+          Используя словесное и визуальное описание реализовать сортировку выбором
+        </p>
+
+        <h3>Словесное описание</h3>
+        <ol class="description-list">
+          <li>Находим самое маленькое число в неотсортированной части массива</li>
+          <li>Меняем его местами с первым элементом этой части</li>
+          <li>Первый элемент теперь на своём месте — больше его не трогаем</li>
+          <li>Повторяем для оставшихся чисел, пока массив не отсортируется</li>
+        </ol>
+
+        <form onsubmit="task1(event)">
+          <div class="fields">
+            <label class="field field--full" for="t1-array">
+              <span>Числа массива через пробел</span>
+              <input id="t1-array" type="text"
+                     placeholder="Например, 5 1 4 2 8" required>
+            </label>
+          </div>
+
+          <button type="submit">Сортировать</button>
+
+          <output class="result" id="result1" aria-live="polite">
+            Результат появится здесь
+          </output>
+        </form>
+
+        <div class="visualization">
+          <h3>Визуальное описание</h3>
+          <p class="visualization__hint">
+            Фиолетовый столбик - выбранный минимум на этом проходе;
+            светло-фиолетовые - уже отсортированные элементы
+          </p>
+
+          <div class="bars" id="bars" aria-label="Визуализация массива">
+            <p class="bars__empty">
+              Нажми «Сортировать», чтобы увидеть столбики
+            </p>
+          </div>
+
+          <p class="step-info" id="step-info" aria-live="polite">
+            Здесь появится описание текущего шага
+          </p>
+
+          <button type="button" id="next-step" onclick="nextStep()" disabled>Следующий шаг</button>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

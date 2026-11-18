@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная №12 — Работа с очередью</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="back-link" href="../index.html">← На главную</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="section-heading">
+      <div>
+        <h2>Лабораторная работа 12</h2>
+      </div>
+    </div>
+
+    <section class="task-grid">
+      <article class="task-card task-card--wide" id="task-1">
+        <div class="task-card__meta">
+        </div>
+
+        <p class="condition">
+          Используя словесное описание реализовать работу с очередью
+        </p>
+
+        <h3>Словесное описание</h3>
+        <ol class="description-list">
+          <li>Очередь работает по принципу FIFO: первый добавленный элемент извлекается первым</li>
+          <li>Новое число добавляется в конец очереди</li>
+          <li>При извлечении удаляется первый элемент</li>
+          <li>Для чисел в очереди можно вычислить сумму, среднее, минимум и максимум</li>
+        </ol>
+
+        <form onsubmit="addNumber(event)">
+          <div class="fields">
+            <label class="field field--full" for="queue-input">
+              <span>Число для добавления в очередь</span>
+              <input id="queue-input" type="number" step="any" placeholder="Например, 15" required>
+            </label>
+          </div>
+
+          <button type="submit">
+            Добавить в очередь
+          </button>
+        </form>
+
+        <div class="queue-actions">
+          <button type="button" onclick="removeNumber()">Извлечь первый</button>
+          <button type="button" onclick="showQueue()">Показать очередь</button>
+          <button type="button" onclick="sumQueue()">Сумма</button>
+          <button type="button" onclick="averageQueue()">Среднее</button>
+          <button type="button" onclick="minQueue()">Минимум</button>
+          <button type="button" onclick="maxQueue()">Максимум</button>
+        </div>
+
+        <output class="result" id="result1" aria-live="polite">
+          Результат действия появится здесь
+        </output>
+
+        <div class="visualization">
+          <div class="queue-title">
+            <h3>Текущая очередь</h3>
+            <span class="queue-counter" id="queue-count">Элементов: 0</span>
+          </div>
+
+          <p class="visualization__hint">
+            Числа идут слева направо. Первое число слева будет извлечено первым
+          </p>
+
+          <div class="queue-ends">
+            <span>НАЧАЛО</span>
+            <span>КОНЕЦ</span>
+          </div>
+
+          <div class="queue-values" id="queue-values">
+            <p class="queue-empty">Очередь пуста. Добавь первое число</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
